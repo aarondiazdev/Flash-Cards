@@ -21,7 +21,7 @@ def next_card(status_="n"):
     card_font.itemconfig(languaje, text="English", fill="black")
     card_font.itemconfig(word, text=current_card["English"], fill="black")  
     card_font.itemconfig(card_img, image=card_img_old) 
-    flip_timer = window.after(30000, func=flip_card)
+    flip_timer = window.after(3000, func=flip_card)
   except IndexError:
     card_font.itemconfig(card_img, image=card_img_old)
     card_font.itemconfig(languaje, text="English", fill="black")
@@ -44,7 +44,7 @@ window.title("Flash Cards By Aaron Diaz")
 window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 if len(to_learn) <= 0:
   warning_no_cards()
-flip_timer = window.after(20000, func=flip_card) 
+flip_timer = window.after(3000, func=flip_card) 
 card_font = Canvas(width=800, height=527)
 card_img_new = PhotoImage(file="images/card_back.png")
 card_img_old = PhotoImage(file="images/card_front.png")
